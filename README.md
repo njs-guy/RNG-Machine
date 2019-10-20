@@ -1,3 +1,3 @@
 # RNG-Machine
 
-Just a little program to generate random numbers.
+Can either generate a set of random numbers, or roll a number of dice (6 or 20-sided).
