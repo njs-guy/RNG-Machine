@@ -39,7 +39,7 @@ function generateNumbers(amount = 5, min = 1, max = 100, allowDecs = false, allo
         output.push(n);
     }
 
-    document.getElementById("output").textContent = output;
+    document.getElementById("outputbox").textContent = output;
 }
 
 // Generates a set of numbers using info from Numbers tab
@@ -57,6 +57,11 @@ function rollDice() {
     rangeMin = 1;
     rangeMax = parseInt(document.getElementById("sides").value);
     generateNumbers(quantity, rangeMin, rangeMax);
+}
+
+function flipCoins() {
+    quantity = parseInt(document.getElementById("quantityCoins").value);
+    generateNumbers(quantity, 1, 2);
 }
 
 // Open the default tab on start

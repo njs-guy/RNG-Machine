@@ -5,7 +5,48 @@ body {
     font-size: 1.5em;
 }
 
+.tab {
+    padding: 5px;
+}
+
 .active {
     color: white;
     background-color: darkgreen;
+}
+
+.tabcontent {
+    float: left;
+    clear: both;
+}
+
+.mainpanel {
+    width: 70%;
+    display: table;
+    flex-direction: column;
+    table-layout: fixed;
+    float: left;
+    clear: left;
+}
+
+.outputpanel {
+    vertical-align: center;
+    display: flex;
+    flex-direction: column;
+    float: right;
+    padding: 15px;
+    width: 25%;
+}
+
+#historybox, #outputbox {
+    padding: 5px;
+    outline: 2px solid black;
+}
+
+#historybox {
+    height: 50vh;
+}
+
+#outputbox {
+    word-wrap: break-word;
+    white-space: pre-line;
 }
