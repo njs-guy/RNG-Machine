@@ -39,7 +39,27 @@ function generateNumbers(amount = 5, min = 1, max = 100, allowDecs = false, allo
         output.push(n);
     }
 
-    document.getElementById("outputbox").textContent = output;
+    outputNumbers(output);
+}
+
+function outputNumbers(randNums) {
+    outputBox = document.getElementById("outputbox");
+    outputBox.textContent = ""; // reset output text
+
+    historyBox = document.getElementById("historylist");
+
+    for( var x = 0; x < randNums.length; x++) {
+        outputBox.textContent += randNums[x];
+
+        var liNode = document.createElement("LI");
+        var textNode = document.createTextNode(randNums[x]);
+        liNode.appendChild(textNode);
+        historyBox.appendChild(liNode);
+
+        if(x !== randNums.length - 1) { //If this is not the last number, add a comma
+            outputBox.textContent += ", ";
+        }
+    }
 }
 
 // Generates a set of numbers using info from Numbers tab
@@ -47,7 +67,6 @@ function generateFromNumbersTab() {
     quantity = parseInt(document.getElementById("quantityNum").value);
     rangeMin = parseInt(document.getElementById("rangeMin").value);
     rangeMax = parseInt(document.getElementById("rangeMax").value);
-    //alert(quantity + " " + rangeMin + " " + rangeMax);
     generateNumbers(quantity, rangeMin, rangeMax);
 }
 

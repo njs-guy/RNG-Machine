@@ -22,31 +22,41 @@ body {
 .mainpanel {
     width: 70%;
     display: table;
-    flex-direction: column;
     table-layout: fixed;
     float: left;
-    clear: left;
 }
 
 .outputpanel {
-    vertical-align: center;
     display: flex;
     flex-direction: column;
     float: right;
-    padding: 15px;
+    margin: 5px 15px 15px 15px;
     width: 25%;
 }
 
+#historytext, #outputtext {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
 #historybox, #outputbox {
-    padding: 5px;
     outline: 2px solid black;
 }
 
 #historybox {
+    overflow-y: scroll;
     height: 50vh;
 }
 
+#historybox>ul {
+    list-style-type: none;
+    margin: 5px;
+    padding: 5px;
+}
+
 #outputbox {
+    margin-top: 5px;
+    padding: 5px;
     word-wrap: break-word;
     white-space: pre-line;
 }
