@@ -1,9 +1,13 @@
 {
   "name": "rng-machine",
-  "version": "0.1",
+  "version": "0.1.0",
   "description": "A WIP Random Number Generator. Currently being rebuilt in HTML/CSS/Javascript and Electron. Old code can be found in the \"old\" branch. More detailed readme coming soon.",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
+    "postinstall": "install-app-deps",
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/njshockey/RNG-Machine/issues"
   },
-  "homepage": "https://github.com/njshockey/RNG-Machine#readme"
+  "homepage": "https://github.com/njshockey/RNG-Machine#readme",
+  "devDependencies": {
+    "electron": "^14.0.0"
+  }
 }
