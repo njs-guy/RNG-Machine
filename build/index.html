@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="light.css"/>
 </head>
 <body>
-   <div class="mainpanel">
+   <div id="mainpanel">
 
     <h1>RNG Machine</h1>
 
@@ -18,6 +18,7 @@
          <button class="tablinks" onclick="openTab(event, 'coinfliptab')">Coin Flip</button>
          <button class="tablinks" onclick="openTab(event, 'presetstab')">Presets</button>
          <button class="tablinks" onclick="openTab(event, 'settingstab')">Settings</button>
+         <button class="tablinks" onclick="openTab(event, 'abouttab')">About</button>
       </div>
 
       <!-- Numbers tab -->
@@ -32,7 +33,7 @@
             <label for="rangeMax"> to </label>
             <input type="number" id="rangeMax" name="rangeMax" min="-1000000" max="1000000" value="100">
             <p></p> <!-- Left blank for spacing -->
-            <button type="button" onclick="generateFromNumbersTab()">Generate</button>
+            <button type="button" onclick="generateFromNumbersTab()" class="btn">Generate</button>
          </form>
       </div>
 
@@ -53,7 +54,7 @@
                 <option value="20">20</option>
             </select>
             <p></p> <!-- Left blank for spacing -->
-            <button type="button" onclick="rollDice()">Roll dice</button>
+            <button type="button" onclick="rollDice()" class="btn">Roll dice</button>
          </form>
       </div>
 
@@ -64,7 +65,7 @@
            <label for="quantityDice">Number of coins:</label>
            <input type="number" id="quantityCoins" name="quantityCoins" min="1" max="20" value="1">
            <p></p> <!-- Left blank for spacing -->
-           <button type="button" onclick="flipCoins()">Flip coins</button>
+           <button type="button" onclick="flipCoins()" class="btn">Flip coins</button>
          </form>
       </div>
 
@@ -77,9 +78,19 @@
       <div id="settingstab" class="tabcontent">
          <p>Settings</p>
       </div>
+
+      <!-- About tab -->
+      <div id="abouttab" class="tabcontent">
+         <p>About</p>
+         <p>RNG Machine is an open source random number generator made by Nick Shockey.</p>
+         <a href="https://github.com/njshockey/RNG-Machine" target="_blank">Source code can be found here.</a>
+      </div>
+
    </div> <!-- End mainpanel -->
      
-      <div class="outputpanel">
+      <!-- Output panel -->
+      <div id="outputpanel">
+
       <!-- History -->
       <p id="historytext">History</p>
       <div id="historybox">
@@ -90,7 +101,7 @@
       <!-- Most recent result -->
       <div id="outputbox">
 
-      </div>
+      </div> <!-- End output panel -->
    </div>
    
    <script src="main.js" type="text/javascript"></script>
