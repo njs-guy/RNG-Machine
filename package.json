@@ -1,0 +1,19 @@
+{
+  "name": "rng-machine",
+  "version": "0.1",
+  "description": "A WIP Random Number Generator. Currently being rebuilt in HTML/CSS/Javascript and Electron. Old code can be found in the \"old\" branch. More detailed readme coming soon.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/njshockey/RNG-Machine.git"
+  },
+  "author": "Nick Shockey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/njshockey/RNG-Machine/issues"
+  },
+  "homepage": "https://github.com/njshockey/RNG-Machine#readme"
+}
