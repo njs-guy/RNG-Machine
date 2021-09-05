@@ -9,6 +9,8 @@
     --lightBodyBg: whitesmoke;
     --lightTabBg: white;
     --lightTabHovBg: lightgray;
+    --lightBtnColor: #555555;
+    --lightBtnHovColor: DimGray;
     --lightMainAccent: darkgreen;
     --lightTextColor: black;
     --lightActiveTextColor: white;
@@ -18,8 +20,10 @@
 
     /* Properties */
     --borderRad: 10px;
+    --btnBorderRad: 3px;
     --stdPad: 10px;
     --transDur: 0.5s;
+    --dropShad: 2px 2px 5px 1px rgba(0,0,0,0.33);
 }
 
 body {
@@ -31,6 +35,24 @@ body {
 
 .btn {
     cursor: pointer;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    border-radius: var(--btnBorderRad);
+    background-color: var(--lightBtnColor);
+    color: var(--lightActiveTextColor);
+    font-size: var(--tabFontSize);
+    padding: var(--stdPad);
+    box-shadow: var(--dropShad);
+}
+
+.btn:hover {
+    background-color: var(--lightBtnHovColor);
+    transition: var(--transDur);
+}
+
+.btn-side {
+    font-size: 12px;
 }
 
 .tab {
