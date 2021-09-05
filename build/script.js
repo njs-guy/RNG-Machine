@@ -19,6 +19,36 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " active";
 }
 
+function hideHistory() {
+    // Declare id variables
+    historyBox = document.getElementById("historybox");
+    historyText = document.getElementById("historytext");
+    hide_history = document.getElementById("hidehistory");
+
+    // Hide historybox and historytext
+    historyBox.style.display = "none";
+    historyText.style.display = "none";
+
+    // Change text of button and change onclick function
+    hide_history.innerText = "Show history";
+    hide_history.onclick = function() { showHistory() };
+}
+
+function showHistory() {
+    // Declare id variables
+    historyBox = document.getElementById("historybox");
+    historyText = document.getElementById("historytext");
+    hide_history = document.getElementById("hidehistory");
+
+    // Hide historybox and historytext
+    historyBox.style.display = "initial";
+    historyText.style.display = "initial";
+
+    // Change text of button and change onclick function
+    hide_history.innerText = "Hide history";
+    hide_history.onclick = function() { hideHistory() };
+}
+
 // The main number generating function
 function generateNumbers(amount = 5, min = 1, max = 100, allowDecs = false, allowDupes = true, sort = false) {
 
