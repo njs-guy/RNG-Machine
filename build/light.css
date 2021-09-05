@@ -1,8 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
 
+:root {
+    /* Font sizes */
+    --mainFontSize: 1.5em;
+    --tabFontSize: 14px;
+
+    /* Light theme colors */
+    --lightBodyBg: whitesmoke;
+    --lightTabBg: white;
+    --lightTabHovBg: lightgray;
+    --lightMainAccent: darkgreen;
+    --lightTextColor: black;
+    --lightActiveTextColor: white;
+    --lightBorder: 1px solid black;
+
+    /* Dark theme colors */
+
+    /* Properties */
+    --borderRad: 10px;
+    --stdPad: 10px;
+    --transDur: 0.5s;
+}
+
 body {
+    color: var(--lightTextColor);
     font-family: 'Fira Sans', Arial, sans-serif;
-    font-size: 1.5em;
+    font-size: var(--mainFontSize);
+    background-color: var(--lightBodyBg);
 }
 
 .btn {
@@ -10,33 +34,33 @@ body {
 }
 
 .tab {
-    background-color: #f1f1f1;
-    border-radius: 10px;
+    background-color: var(--lightTabBg);
+    border-radius: var(--borderRad);
 }
 
 .tablinks {
-    font-size: 14px;
+    font-size: var(--tabFontSize);
     cursor: pointer;
     background-color: inherit;
-    padding: 10px;
+    padding: var(--stdPad);
     border: none;
     outline: none;
-    border-radius: 10px;
+    border-radius: var(--borderRad);
 }
 
 .tablinks:hover {
-    background-color: lightgray;
-    transition: 0.5s;
+    background-color: var(--lightTabHovBg);
+    transition: var(--transDur);
 }
 
 .active {
-    color: white;
-    background-color: darkgreen;
-    transition: 0.5s;
+    color: var(--lightActiveTextColor);
+    background-color: var(--lightMainAccent);
+    transition: var(--transDur);
 }
 
 .active:hover {
-    background-color: darkgreen;
+    background-color: var(--lightMainAccent);
 }
 
 .tabcontent {
@@ -45,9 +69,9 @@ body {
 }
 
 #mainpanel {
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid black;
+    padding: var(--stdPad);
+    border-radius: var(--borderRad);
+    border: var(--lightBorder);
     width: 70%;
     display: table;
     table-layout: fixed;
@@ -68,8 +92,8 @@ body {
 }
 
 #historybox, #outputbox {
-    border: 1px solid black;
-    border-radius: 10px;
+    border: var(--lightBorder);
+    border-radius: var(--borderRad);
 }
 
 #historybox {
@@ -85,7 +109,7 @@ body {
 
 #outputbox {
     margin-top: 5px;
-    padding: 5px;
+    padding: var(--stdPad);
     word-wrap: break-word;
     white-space: pre-line;
 }
