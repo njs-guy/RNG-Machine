@@ -69,14 +69,31 @@ function generateNumbers(amount = 5, min = 1, max = 100, allowDecs = false, allo
         output.push(n);
     }
 
-    outputNumbers(output);
+    return output;
 }
 
-function outputNumbers(randNums) {
+function outputNumbers(randNums, coins = false) {
     outputBox = document.getElementById("outputbox");
     outputBox.textContent = ""; // reset output text
 
     historyBox = document.getElementById("historylist");
+
+    //if the output should be heads or tails, convert numbers in array
+    if(coins) {
+        for( var x = 0; x < randNums.length; x++) {
+            switch (randNums[x]) {
+                case 1:
+                    randNums[x] = "heads";
+                    break;
+                case 2:
+                    randNums[x] = "tails";
+                    break;
+                default:
+                    randNums[x] = "The coin landed on its side.";
+                    break;
+            }
+        }
+    }
 
     for( var x = 0; x < randNums.length; x++) {
         outputBox.textContent += randNums[x];
@@ -97,7 +114,8 @@ function generateFromNumbersTab() {
     quantity = parseInt(document.getElementById("quantityNum").value);
     rangeMin = parseInt(document.getElementById("rangeMin").value);
     rangeMax = parseInt(document.getElementById("rangeMax").value);
-    generateNumbers(quantity, rangeMin, rangeMax);
+    nums = generateNumbers(quantity, rangeMin, rangeMax);
+    outputNumbers(nums);
 }
 
 // Rolls dice using info from Dice Roll tab
@@ -105,12 +123,14 @@ function rollDice() {
     quantity = parseInt(document.getElementById("quantityDice").value);
     rangeMin = 1;
     rangeMax = parseInt(document.getElementById("sides").value);
-    generateNumbers(quantity, rangeMin, rangeMax);
+    nums = generateNumbers(quantity, rangeMin, rangeMax);
+    outputNumbers(nums);
 }
 
 function flipCoins() {
     quantity = parseInt(document.getElementById("quantityCoins").value);
-    generateNumbers(quantity, 1, 2);
+    nums = generateNumbers(quantity, 1, 2);
+    outputNumbers(nums, true);
 }
 
 // Open the default tab on start
