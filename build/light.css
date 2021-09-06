@@ -6,16 +6,16 @@
     --tabFontSize: 14px;
 
     /* Light theme colors */
-    --lightBodyBg: whitesmoke;
+    --lightBodyBg: linen;
     --lightTabBg: white;
     --lightTabHovBg: lightgray;
-    --lightPanelColor: linen;
+    --lightPanelColor: whitesmoke;
     --lightBtnColor: #555555;
     --lightBtnHovColor: DimGray;
     --lightMainAccent: darkgreen;
     --lightTextColor: black;
     --lightActiveTextColor: white;
-    --lightBorder: 1px solid black;
+    --lightBorder: 1px solid darkgray;
 
     /* Dark theme colors */
 
@@ -25,7 +25,7 @@
     --stdPad: 10px;
     --transDur: 0.5s;
     --dropShad: 2px 2px 5px 1px rgba(0,0,0,0.33);
-    --innerShad: black;
+    --innerShad: inset 3px 3px 7px 1px rgba(0,0,0,0.33);
 }
 
 body {
@@ -33,6 +33,14 @@ body {
     font-family: 'Fira Sans', Arial, sans-serif;
     font-size: var(--mainFontSize);
     background-color: var(--lightBodyBg);
+}
+
+.box {
+    background-color: var(--lightPanelColor);
+    padding: var(--stdPad);
+    border-radius: var(--borderRad);
+    border: var(--lightBorder);
+    box-shadow: var(--dropShad);
 }
 
 .btn {
@@ -57,19 +65,21 @@ body {
     font-size: 12px;
 }
 
-.tab {
+.tabbar {
+    margin: -10px;
     background-color: var(--lightTabBg);
-    border-radius: var(--borderRad);
+    border-radius: 9px 9px 0px 0px;
 }
 
 .tablinks {
+    text-align: center;
     font-size: var(--tabFontSize);
     cursor: pointer;
-    background-color: inherit;
+    background-color: var(--lightPanelColor);
     padding: var(--stdPad);
     border: none;
     outline: none;
-    border-radius: var(--borderRad);
+    border-radius: inherit;
 }
 
 .tablinks:hover {
@@ -90,12 +100,6 @@ body {
 .tabcontent {
     float: left;
     clear: both;
-}
-
-.box {
-    padding: var(--stdPad);
-    border-radius: var(--borderRad);
-    border: var(--lightBorder);
 }
 
 #mainpanel {
