@@ -135,3 +135,6 @@ function flipCoins() {
 
 // Open the default tab on start
 document.getElementById("defaultOpen").click();
+
+// Hide history by default
+hideHistory();

@@ -63,6 +63,7 @@ body {
 
 .btn-side {
     font-size: 12px;
+    margin-top: 15px;
 }
 
 .tabbar {
@@ -135,6 +136,7 @@ body {
 
 #outputbox {
     margin-top: 5px;
+    height: inherit;
     word-wrap: break-word;
     white-space: pre-line;
 }
