@@ -9,6 +9,7 @@
     --lightBodyBg: whitesmoke;
     --lightTabBg: white;
     --lightTabHovBg: lightgray;
+    --lightPanelColor: linen;
     --lightBtnColor: #555555;
     --lightBtnHovColor: DimGray;
     --lightMainAccent: darkgreen;
@@ -24,6 +25,7 @@
     --stdPad: 10px;
     --transDur: 0.5s;
     --dropShad: 2px 2px 5px 1px rgba(0,0,0,0.33);
+    --innerShad: black;
 }
 
 body {
@@ -90,10 +92,13 @@ body {
     clear: both;
 }
 
-#mainpanel {
+.box {
     padding: var(--stdPad);
     border-radius: var(--borderRad);
     border: var(--lightBorder);
+}
+
+#mainpanel {
     width: 70%;
     display: table;
     table-layout: fixed;
@@ -113,11 +118,6 @@ body {
     margin-bottom: 8px;
 }
 
-#historybox, #outputbox {
-    border: var(--lightBorder);
-    border-radius: var(--borderRad);
-}
-
 #historybox {
     overflow-y: scroll;
     height: 50vh;
@@ -131,7 +131,6 @@ body {
 
 #outputbox {
     margin-top: 5px;
-    padding: var(--stdPad);
     word-wrap: break-word;
     white-space: pre-line;
 }
