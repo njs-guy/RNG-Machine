@@ -22,6 +22,7 @@
 
     /* Properties */
     --borderRad: 10px;
+    --scrollBorderRad: 10px 0px 0px 10px;
     --btnBorderRad: 3px;
     --stdPad: 10px;
     --transDur: 0.5s;
@@ -128,6 +129,7 @@ body {
 #historybox {
     overflow-y: scroll;
     height: 50vh;
+    border-radius: var(--scrollBorderRad);
 }
 
 #historybox>ul {
