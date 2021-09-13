@@ -37,6 +37,24 @@ body {
     background-color: var(--lightBodyBg);
 }
 
+input[type=number] {
+    padding: 5px;
+    border-radius: var(--btnBorderRad);
+    border: 1px solid var(--lightMainAccent);
+    -moz-appearance: textfield; /* Removes num arrows */
+}
+
+input[type=number]:focus {
+    outline-color: var(--lightMainAccent);
+}
+
+/* Removes num arrows */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .box {
     background-color: var(--lightPanelColor);
     padding: var(--stdPad);
