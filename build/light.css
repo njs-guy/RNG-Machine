@@ -11,7 +11,6 @@
     --lightTabHovBg: lightgray;
     --lightPanelColor: whitesmoke;
     --lightBtnColor: #555555;
-  /*  --lightBtnHovColor: DimGray; */
     --lightBtnHovColor: rgb(0, 141, 89);
     --lightMainAccent: darkgreen;
     --lightTextColor: black;
@@ -25,6 +24,7 @@
     --scrollBorderRad: 10px 0px 0px 10px;
     --btnBorderRad: 3px;
     --stdPad: 10px;
+    --thinPad: 5px;
     --transDur: 0.5s;
     --dropShad: 2px 2px 5px 1px rgba(0,0,0,0.33);
     --innerShad: inset 3px 3px 7px 1px rgba(0,0,0,0.33);
@@ -37,15 +37,20 @@ body {
     background-color: var(--lightBodyBg);
 }
 
-input[type=number] {
-    padding: 5px;
+input[type=number], select {
+    font-family: inherit;
+    font-size: var(--tabFontSize);
+    padding: var(--thinPad);
     border-radius: var(--btnBorderRad);
     border: 1px solid var(--lightMainAccent);
-    -moz-appearance: textfield; /* Removes num arrows */
 }
 
 input[type=number]:focus {
     outline-color: var(--lightMainAccent);
+}
+
+input[type=number] {
+    -moz-appearance: textfield; /* Removes num arrows */
 }
 
 /* Removes num arrows */
@@ -69,7 +74,6 @@ input::-webkit-inner-spin-button {
     outline: none;
     font-weight: bold;
     border-radius: var(--btnBorderRad);
-    /* background-color: var(--lightBtnColor); */
     background-color: var(--lightMainAccent);
     color: var(--lightActiveTextColor);
     font-size: var(--tabFontSize);
