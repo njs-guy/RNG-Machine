@@ -16,10 +16,12 @@
     --lightTextColor: black;
     --lightActiveTextColor: white;
     --lightBorder: 1px solid darkgray;
+    --fakeWhite: #fefefe; /* Effectively still white but changes select's background on Firefox */
 
     /* Dark theme colors */
 
     /* Properties */
+    --fontFamily: 'Fira Sans', Arial, sans-serif;
     --borderRad: 10px;
     --scrollBorderRad: 10px 0px 0px 10px;
     --btnBorderRad: 3px;
@@ -32,7 +34,7 @@
 
 body {
     color: var(--lightTextColor);
-    font-family: 'Fira Sans', Arial, sans-serif;
+    font-family: var(--fontFamily);
     font-size: var(--mainFontSize);
     background-color: var(--lightBodyBg);
 }
@@ -40,6 +42,7 @@ body {
 input[type=number], select {
     font-family: inherit;
     font-size: var(--tabFontSize);
+    background-color: var(--fakeWhite);
     padding: var(--thinPad);
     border-radius: var(--btnBorderRad);
     border: 1px solid var(--lightMainAccent);
@@ -98,8 +101,11 @@ input::-webkit-inner-spin-button {
 }
 
 .tablinks {
-    text-align: center;
+    margin-top: 5px;
+    margin-left: 5px;
+    font-family: var(--fontFamily);
     font-size: var(--tabFontSize);
+    text-align: center;
     cursor: pointer;
     background-color: var(--lightPanelColor);
     padding: var(--stdPad);
@@ -126,6 +132,10 @@ input::-webkit-inner-spin-button {
 .tabcontent {
     float: left;
     clear: both;
+}
+
+.checkLabel {
+    font-size: var(--tabFontSize);
 }
 
 #mainpanel {

@@ -35,7 +35,7 @@
             <p></p> <!-- Left blank for spacing -->
 
             <div class="advNumOpts">
-               <input type="checkbox" id="allowDecimals" name="allowDecimals" value="allowDecimals">
+               <input type="checkbox" id="allowDecimals" class="checkbox" name="allowDecimals" value="allowDecimals">
                <label for="allowDecimals" class="checkLabel">Allow decimals</label>
                <select id="decimalPlaces" name="decimalPlaces">
                   <option value="1">0.1</option>
@@ -44,10 +44,10 @@
                   <option value="4">0.0001</option>
                   <option value="5">0.00001</option>
                </select>
-               <input type="checkbox" id="allowDupes" name="allowDupes" value="allowDupes">
+               <input type="checkbox" id="allowDupes" class="checkbox" name="allowDupes" value="allowDupes" >
                <label for="allowDupes" class="checkLabel">Allow duplicates</label>
 
-               <input type="checkbox" id="sortResults" name="sortResults" value="sortResults">
+               <input type="checkbox" id="sortResults" class="checkbox" name="sortResults" value="sortResults">
                <label for="sortResults" class="checkLabel">Sort results</label>
                <p></p> <!-- Left blank for spacing -->
             </div>
@@ -73,7 +73,7 @@
                 <option value="20">20</option>
             </select>
             <p></p> <!-- Left blank for spacing -->
-            <input type="checkbox" id="sortDice" name="sortDice" value="sortDice">
+            <input type="checkbox" id="sortDice" class="checkbox" name="sortDice" value="sortDice">
             <label for="sortDice" class="checkLabel">Sort results</label>
             <p></p> <!-- Left blank for spacing -->
             <button type="button" onclick="rollDice()" class="btn">Roll dice</button>
@@ -87,7 +87,7 @@
             <label for="quantityCoins">Number of coins:</label>
             <input type="number" id="quantityCoins" name="quantityCoins" min="1" max="20" value="1">
             <p></p> <!-- Left blank for spacing -->
-            <input type="checkbox" id="sortCoins" name="sortCoins" value="sortCoins">
+            <input type="checkbox" id="sortCoins" class="checkbox" name="sortCoins" value="sortCoins">
             <label for="sortCoins" class="checkLabel">Sort results</label>
             <p></p> <!-- Left blank for spacing -->
             <button type="button" onclick="flipCoins()" class="btn">Flip coins</button>
