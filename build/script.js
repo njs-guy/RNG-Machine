@@ -1,6 +1,6 @@
 // Opens and closes tabs
 function openTab(evt, tabName) {
-    var i, tab, tablinks;
+    var i, tablinks;
 
     // Get all elements with class "tabcontent" and hide them
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -19,6 +19,7 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " active";
 }
 
+// Shows the history panel
 function hideHistory() {
     // Declare id variables
     historyBox = document.getElementById("historybox");
@@ -34,6 +35,7 @@ function hideHistory() {
     hide_history.onclick = function() { showHistory() };
 }
 
+// Hides the history panel
 function showHistory() {
     // Declare id variables
     historyBox = document.getElementById("historybox");
@@ -50,22 +52,30 @@ function showHistory() {
 }
 
 // The main number generating function
-function generateNumbers(amount = 5, min = 1, max = 100, allowDecs = false, allowDupes = true, sort = false) {
+function generateNumbers(amount = 5, min = 1, max = 100, sort = false, allowDupes = true, allowDecs = false, decPlaces = 0) {
 
     // If amount is less than 1, set it to 1
     if (amount < 1) {
         amount = 1;
     }
 
-    // If min is greater than max, set min to 1
+    // If min is greater than max, set min to 0
     if(min > max) {
-        min = 1;
+        min = 0;
     }
 
     var output = [];
+    var n = 0;
 
     for( var x = 0; x < amount; x ++) {
-        var n = Math.floor((Math.random() * (max + 1 - min)) + min);
+ 
+        if(allowDecs === false) {
+            n = Math.floor((Math.random() * (max + 1 - min)) + min);
+        } else {
+            n = (Math.random() * (max + 1 - min)) + min;
+            n = n.toFixed(decPlaces);
+        }
+
         output.push(n);
     }
 
@@ -77,13 +87,14 @@ function generateNumbers(amount = 5, min = 1, max = 100, allowDecs = false, allo
     return output;
 }
 
+// Outputs numbers to the output and history panels
 function outputNumbers(randNums, coins = false) {
     outputBox = document.getElementById("outputbox");
     outputBox.textContent = ""; // reset output text
 
     historyBox = document.getElementById("historylist");
 
-    //if the output should be heads or tails, convert numbers in array
+    // If the output should be heads or tails, convert numbers in array. 1 is heads, 2 is tails.
     if(coins) {
         for( var x = 0; x < randNums.length; x++) {
             switch (randNums[x]) {
@@ -94,7 +105,7 @@ function outputNumbers(randNums, coins = false) {
                     randNums[x] = "tails";
                     break;
                 default:
-                    randNums[x] = "The coin landed on its side.";
+                    randNums[x] = "The coin landed on its side";
                     break;
             }
         }
@@ -108,7 +119,7 @@ function outputNumbers(randNums, coins = false) {
         liNode.appendChild(textNode);
         historyBox.appendChild(liNode);
 
-        if(x !== randNums.length - 1) { //If this is not the last number, add a comma
+        if(x !== randNums.length - 1) { // If this is not the last number, add a comma
             outputBox.textContent += ", ";
         }
     }
@@ -120,8 +131,12 @@ function generateFromNumbersTab() {
     rangeMin = parseInt(document.getElementById("rangeMin").value);
     rangeMax = parseInt(document.getElementById("rangeMax").value);
     sort = document.getElementById("sortResults").checked;
+    dupes = document.getElementById("allowDupes").checked;
+    decs = document.getElementById("allowDecimals").checked;
+    places = parseInt(document.getElementById("decimalPlaces").value);
+    
 
-    nums = generateNumbers(quantity, rangeMin, rangeMax, false, true, sort);
+    nums = generateNumbers(quantity, rangeMin, rangeMax, sort, dupes, decs, places);
     outputNumbers(nums);
 }
 
@@ -132,15 +147,16 @@ function rollDice() {
     rangeMax = parseInt(document.getElementById("sides").value);
     sort = document.getElementById("sortResults").checked;
 
-    nums = generateNumbers(quantity, rangeMin, rangeMax, false, true, sort);
+    nums = generateNumbers(quantity, rangeMin, rangeMax, sort);
     outputNumbers(nums);
 }
 
+// Flips coins using info from Coin Flip tab
 function flipCoins() {
     quantity = parseInt(document.getElementById("quantityCoins").value);
     sort = document.getElementById("sortResults").checked;
 
-    nums = generateNumbers(quantity, 1, 2, false, true, sort);
+    nums = generateNumbers(quantity, 1, 2, sort);
     outputNumbers(nums, true);
 }
 
