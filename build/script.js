@@ -69,6 +69,11 @@ function generateNumbers(amount = 5, min = 1, max = 100, allowDecs = false, allo
         output.push(n);
     }
 
+    // Sort results if sort is true
+    if (sort) {
+        output.sort(function(a, b){return a-b});
+    }
+
     return output;
 }
 
@@ -114,7 +119,9 @@ function generateFromNumbersTab() {
     quantity = parseInt(document.getElementById("quantityNum").value);
     rangeMin = parseInt(document.getElementById("rangeMin").value);
     rangeMax = parseInt(document.getElementById("rangeMax").value);
-    nums = generateNumbers(quantity, rangeMin, rangeMax);
+    sort = document.getElementById("sortResults").checked;
+
+    nums = generateNumbers(quantity, rangeMin, rangeMax, false, true, sort);
     outputNumbers(nums);
 }
 
@@ -123,13 +130,17 @@ function rollDice() {
     quantity = parseInt(document.getElementById("quantityDice").value);
     rangeMin = 1;
     rangeMax = parseInt(document.getElementById("sides").value);
-    nums = generateNumbers(quantity, rangeMin, rangeMax);
+    sort = document.getElementById("sortResults").checked;
+
+    nums = generateNumbers(quantity, rangeMin, rangeMax, false, true, sort);
     outputNumbers(nums);
 }
 
 function flipCoins() {
     quantity = parseInt(document.getElementById("quantityCoins").value);
-    nums = generateNumbers(quantity, 1, 2);
+    sort = document.getElementById("sortResults").checked;
+
+    nums = generateNumbers(quantity, 1, 2, false, true, sort);
     outputNumbers(nums, true);
 }
 
