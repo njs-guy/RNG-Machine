@@ -65,17 +65,41 @@ function generateNumbers(amount = 5, min = 1, max = 100, sort = false, allowDupe
     }
 
     var output = [];
+    var dupe = false;
+    var loopCount = 0;
     var n = 0;
 
     for( var x = 0; x < amount; x ++) {
- 
-        if(allowDecs === false) {
-            n = Math.floor((Math.random() * (max + 1 - min)) + min);
-        } else {
-            n = (Math.random() * (max + 1 - min)) + min;
-            n = n.toFixed(decPlaces);
-        }
+        
+        do {
+            if(allowDecs === false) {
+                n = Math.floor((Math.random() * (max + 1 - min)) + min);
+            } else {
+                n = (Math.random() * (max + 1 - min)) + min;
+                n = n.toFixed(decPlaces);
+            }
 
+            // If dupes are allowed, and n is included in output, dupe is true so reroll the number.
+            if(allowDupes === false) {
+                if(output.includes(n)) {
+                    dupe = true;
+                } else {
+                    dupe = false;
+                }
+            }
+            loopCount += 1;
+
+            // Breaks the loop if infinite.
+            if (loopCount >= 100){
+                alert("Infinite loop error. No result.");
+                n = "null";
+                allowDupes = true;
+                break;
+            }
+        }
+        while (dupe);
+
+        loopCount = 0;
         output.push(n);
     }
 
