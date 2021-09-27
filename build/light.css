@@ -91,6 +91,7 @@ input::-webkit-inner-spin-button {
 
 .btn-side {
     font-size: 12px;
+    text-align: center;
     margin-top: 15px;
 }
 
@@ -151,6 +152,16 @@ input::-webkit-inner-spin-button {
     float: right;
     margin: 5px 15px 15px 15px;
     width: 25%;
+}
+
+#copy-btns {
+    display: flex;
+    justify-content: space-around;
+}
+
+#copy-btns .btn-side {
+    
+    width: 45%;
 }
 
 #historytext, #outputtext {

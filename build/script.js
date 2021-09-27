@@ -136,12 +136,13 @@ function outputNumbers(randNums, coins = false) {
     }
 
     for( var x = 0; x < randNums.length; x++) {
-        outputBox.textContent += randNums[x];
+        outputBox.textContent += randNums[x]; // Outputs current number to output panel
 
-        var liNode = document.createElement("LI");
-        var textNode = document.createTextNode(randNums[x]);
-        liNode.appendChild(textNode);
-        historyBox.appendChild(liNode);
+        var liNode = document.createElement("LI"); // Create a li element
+        var textNode = document.createTextNode(randNums[x]); // Add text to that li element
+        liNode.className = "history-item"; // Give the li a class
+        liNode.appendChild(textNode); // Append the text to the li
+        historyBox.appendChild(liNode); // Append the li to the history panel
 
         if(x !== randNums.length - 1) { // If this is not the last number, add a comma
             outputBox.textContent += ", ";
@@ -182,6 +183,40 @@ function flipCoins() {
 
     nums = generateNumbers(quantity, 1, 2, sort);
     outputNumbers(nums, true);
+}
+
+// Takes what's currently in the output panel and copies it to the clipboard
+function copyOutput() {
+    var output = document.getElementById("outputbox");
+
+    navigator.clipboard.writeText(output.textContent);
+    alert("Copied output to clipboard."); // Temp message
+}
+
+// Takes what's currently in the history panel and copies it to the clipboard
+function copyHistory() {
+    
+    var historyBox = document.getElementById("historybox");
+    var historyList = document.getElementById("historylist");
+    var historyItems = historyList.getElementsByClassName("history-item");
+    var output = "";
+
+    if(historyItems.length > 0){
+
+        for (var i = 0; i < historyItems.length; i ++) {
+            output += historyItems[i].textContent;
+
+            if(i !== historyItems.length - 1) { // If this is not the last number, add a comma
+                output += ", ";
+            }
+        }
+
+    } else {
+        alert("There is no history to output.")
+    }
+
+    navigator.clipboard.writeText(output);
+    alert("Copied history to clipboard."); // Temp message
 }
 
 // Open the default tab on start

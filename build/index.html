@@ -115,14 +115,21 @@
      
    <!-- Output panel -->
    <div id="outputpanel">
-
+      
       <!-- Most recent result -->
       <p id="outputtext">Output</p>
       <div class="box" id="outputbox">No numbers yet.</div> 
+
+      <!-- Copy to clipboard -->
+      <div id="copy-btns">
+         <button type="button" onclick="copyOutput()" class="btn btn-side" id="copy-output">Copy output</button>
+         <button type="button" onclick="copyHistory()" class="btn btn-side" id="copy-history">Copy history</button>
+      </div>
       
+      <!-- Show/hide history -->
       <button type="button" onclick="hideHistory()" class="btn btn-side" id="hidehistory">Hide history</button>
          
-      <!-- History -->
+      <!-- History panel -->
       <p id="historytext">History</p>
       <div class="box" id="historybox">
          <ul id="historylist"></ul>
