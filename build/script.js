@@ -189,14 +189,16 @@ function flipCoins() {
 function copyOutput() {
     var output = document.getElementById("outputbox");
 
-    navigator.clipboard.writeText(output.textContent);
-    alert("Copied output to clipboard."); // Temp message
+    if (output.textContent !== "No numbers yet.") {
+        navigator.clipboard.writeText(output.textContent);
+        alert("Copied output to clipboard."); // Temp message
+    } else {
+        alert("There is no output to copy yet."); // Temp message
+    }
 }
 
 // Takes what's currently in the history panel and copies it to the clipboard
 function copyHistory() {
-    
-    var historyBox = document.getElementById("historybox");
     var historyList = document.getElementById("historylist");
     var historyItems = historyList.getElementsByClassName("history-item");
     var output = "";
@@ -211,12 +213,12 @@ function copyHistory() {
             }
         }
 
-    } else {
-        alert("There is no history to output.")
-    }
+        navigator.clipboard.writeText(output);
+        alert("Copied history to clipboard."); // Temp message
 
-    navigator.clipboard.writeText(output);
-    alert("Copied history to clipboard."); // Temp message
+    } else {
+        alert("There is no history to output yet.")
+    }
 }
 
 // Open the default tab on start
