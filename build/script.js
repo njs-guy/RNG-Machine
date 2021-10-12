@@ -221,6 +221,17 @@ function copyHistory() {
     }
 }
 
+// Makes sure every sort checkbox has the same value
+function syncSortBoxes(checkValue) {
+    var sortResults = document.getElementById("sortResults");
+    var sortDice = document.getElementById("sortDice");
+    var sortCoins = document.getElementById("sortCoins");
+
+    sortResults.checked = checkValue;
+    sortDice.checked = checkValue;
+    sortCoins.checked = checkValue;
+}
+
 // Open the default tab on start
 document.getElementById("defaultOpen").click();
 
