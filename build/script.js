@@ -19,7 +19,7 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " active";
 }
 
-// Shows the history panel
+// Hides the history panel
 function hideHistory() {
     // Declare id variables
     historyBox = document.getElementById("historybox");
@@ -35,7 +35,7 @@ function hideHistory() {
     hide_history.onclick = function() { showHistory() };
 }
 
-// Hides the history panel
+// Shows the history panel
 function showHistory() {
     // Declare id variables
     historyBox = document.getElementById("historybox");
@@ -64,14 +64,17 @@ function generateNumbers(amount = 5, min = 1, max = 100, sort = false, allowDupe
         min = 0;
     }
 
-    var output = [];
-    var dupe = false;
-    var loopCount = 0;
-    var n = 0;
+    var output = []; //array of results
+    var dupe = false; //If current number is a duplicate
+    var loopCount = 0; //Number of rerolls for current number
+    var n = 0; //Current number
 
     for( var x = 0; x < amount; x ++) {
         
-        do {
+        do { //Loop the following until there is not a duplicate
+
+            // If decimals are not allowed, round down to whole number
+            // If decimals are allowed, change to decimal place.
             if(allowDecs === false) {
                 n = Math.floor((Math.random() * (max + 1 - min)) + min);
             } else {
@@ -79,7 +82,7 @@ function generateNumbers(amount = 5, min = 1, max = 100, sort = false, allowDupe
                 n = n.toFixed(decPlaces);
             }
 
-            // If dupes are allowed, and n is included in output, dupe is true so reroll the number.
+            // If duplicate numbers are not allowed, and n is included in output, dupe is true so reroll the number.
             if(allowDupes === false) {
                 if(output.includes(n)) {
                     dupe = true;
@@ -89,16 +92,17 @@ function generateNumbers(amount = 5, min = 1, max = 100, sort = false, allowDupe
             }
             loopCount += 1;
 
-            // Breaks the loop if infinite.
+            // Breaks the loop if infinite. Returns an array of one string labeled "null"
             if (loopCount >= 100){
                 alert("Infinite loop error. No result.");
-                n = "null";
-                allowDupes = true;
-                break;
+                nullOutput = [];
+                nullOutput.push("null");
+                return nullOutput;
             }
         }
-        while (dupe);
+        while (dupe); // End loop for current number
 
+        // Reset loop count, push current number to output
         loopCount = 0;
         output.push(n);
     }
