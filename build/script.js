@@ -22,9 +22,9 @@ function openTab(evt, tabName) {
 // Hides the history panel
 function hideHistory() {
     // Declare id variables
-    historyBox = document.getElementById("historybox");
-    historyText = document.getElementById("historytext");
-    hide_history = document.getElementById("hidehistory");
+    var historyBox = document.getElementById("historybox");
+    var historyText = document.getElementById("historytext");
+    var hide_history = document.getElementById("hidehistory");
 
     // Hide historybox and historytext
     historyBox.style.display = "none";
@@ -38,9 +38,9 @@ function hideHistory() {
 // Shows the history panel
 function showHistory() {
     // Declare id variables
-    historyBox = document.getElementById("historybox");
-    historyText = document.getElementById("historytext");
-    hide_history = document.getElementById("hidehistory");
+    var historyBox = document.getElementById("historybox");
+    var historyText = document.getElementById("historytext");
+    var hide_history = document.getElementById("hidehistory");
 
     // Hide historybox and historytext
     historyBox.style.display = "initial";
@@ -117,10 +117,10 @@ function generateNumbers(amount = 5, min = 1, max = 100, sort = false, allowDupe
 
 // Outputs numbers to the output and history panels
 function outputNumbers(randNums, coins = false) {
-    outputBox = document.getElementById("outputbox");
+    var outputBox = document.getElementById("outputbox");
     outputBox.textContent = ""; // reset output text
 
-    historyBox = document.getElementById("historylist");
+    var historyBox = document.getElementById("historylist");
 
     // If the output should be heads or tails, convert numbers in array. 1 is heads, 2 is tails.
     if(coins) {
@@ -156,36 +156,36 @@ function outputNumbers(randNums, coins = false) {
 
 // Generates a set of numbers using info from Numbers tab
 function generateFromNumbersTab() {
-    quantity = parseInt(document.getElementById("quantityNum").value);
-    rangeMin = parseInt(document.getElementById("rangeMin").value);
-    rangeMax = parseInt(document.getElementById("rangeMax").value);
-    sort = document.getElementById("sortResults").checked;
-    dupes = document.getElementById("allowDupes").checked;
-    decs = document.getElementById("allowDecimals").checked;
-    places = parseInt(document.getElementById("decimalPlaces").value);
+    var quantity = parseInt(document.getElementById("quantityNum").value);
+    var rangeMin = parseInt(document.getElementById("rangeMin").value);
+    var rangeMax = parseInt(document.getElementById("rangeMax").value);
+    var sort = document.getElementById("sortResults").checked;
+    var dupes = document.getElementById("allowDupes").checked;
+    var decs = document.getElementById("allowDecimals").checked;
+    var places = parseInt(document.getElementById("decimalPlaces").value);
     
 
-    nums = generateNumbers(quantity, rangeMin, rangeMax, sort, dupes, decs, places);
+    var nums = generateNumbers(quantity, rangeMin, rangeMax, sort, dupes, decs, places);
     outputNumbers(nums);
 }
 
 // Rolls dice using info from Dice Roll tab
 function rollDice() {
-    quantity = parseInt(document.getElementById("quantityDice").value);
-    rangeMin = 1;
-    rangeMax = parseInt(document.getElementById("sides").value);
-    sort = document.getElementById("sortResults").checked;
+    var quantity = parseInt(document.getElementById("quantityDice").value);
+    var rangeMin = 1;
+    var rangeMax = parseInt(document.getElementById("sides").value);
+    var sort = document.getElementById("sortResults").checked;
 
-    nums = generateNumbers(quantity, rangeMin, rangeMax, sort);
+    var nums = generateNumbers(quantity, rangeMin, rangeMax, sort);
     outputNumbers(nums);
 }
 
 // Flips coins using info from Coin Flip tab
 function flipCoins() {
-    quantity = parseInt(document.getElementById("quantityCoins").value);
-    sort = document.getElementById("sortResults").checked;
+    var quantity = parseInt(document.getElementById("quantityCoins").value);
+    var sort = document.getElementById("sortResults").checked;
 
-    nums = generateNumbers(quantity, 1, 2, sort);
+    var nums = generateNumbers(quantity, 1, 2, sort);
     outputNumbers(nums, true);
 }
 
@@ -234,6 +234,28 @@ function syncSortBoxes(checkValue) {
     sortResults.checked = checkValue;
     sortDice.checked = checkValue;
     sortCoins.checked = checkValue;
+}
+
+// Clears the history and output panels
+function clearHistory() {
+    console.log("Wow")
+    var outputBox = document.getElementById("outputbox");
+    var historyList = document.getElementById("historylist");
+    // var historyItems = historyList.getElementsByClassName("history-item");
+
+    outputBox.textContent = "No numbers yet."; // reset output text
+
+    while(historyList.hasChildNodes()) {
+        historyList.removeChild(historyList.firstChild)
+    }
+    
+    
+}
+
+// If the checkbox next to the decimal places drop down is not checked, make the dropdown disabled
+function disableDecimalDropdown(checkValue) {
+    var decimalPlaces = document.getElementById("decimalPlaces");
+    decimalPlaces.disabled = checkValue;
 }
 
 // Open the default tab on start

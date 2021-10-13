@@ -35,9 +35,9 @@
             <p></p> <!-- Left blank for spacing -->
 
             <div class="advNumOpts">
-               <input type="checkbox" id="allowDecimals" class="checkbox" name="allowDecimals" value="allowDecimals">
+               <input type="checkbox" id="allowDecimals" class="checkbox" name="allowDecimals" value="allowDecimals"  onclick="disableDecimalDropdown(!this.checked)">
                <label for="allowDecimals" class="checkLabel">Allow decimals</label>
-               <select id="decimalPlaces" name="decimalPlaces">
+               <select id="decimalPlaces" name="decimalPlaces" disabled = "true">
                   <option value="1">0.1</option>
                   <option value="2">0.01</option>
                   <option value="3">0.001</option>
@@ -102,6 +102,14 @@
       <!-- Settings tab -->
       <div id="settingstab" class="tabcontent">
          <p>Settings</p>
+         <button type="button" onclick="clearHistory()" class="btn">Clear history</button>
+         <p></p> <!-- Left blank for spacing -->
+         <label for="theme-dropdown">Theme:</label>
+            <select id="theme-dropdown" name="theme-dropdown">
+                <option value="0">Light</option>
+                <!-- <option value="1">Dark</option> -->
+                <!-- <option value="2">Black</option> -->
+            </select>
       </div> <!-- End settings tab -->
 
       <!-- About tab -->
