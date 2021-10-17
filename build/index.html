@@ -35,6 +35,9 @@
             <p></p> <!-- Left blank for spacing -->
 
             <div class="advNumOpts">
+               <input type="checkbox" id="sortResults" class="checkbox" name="sortResults" value="sortResults" onclick="syncSortBoxes(this.checked)">
+               <label for="sortResults" class="checkLabel">Sort results</label>
+
                <input type="checkbox" id="allowDecimals" class="checkbox" name="allowDecimals" value="allowDecimals"  onclick="disableDecimalDropdown(!this.checked)">
                <label for="allowDecimals" class="checkLabel">Allow decimals</label>
                <select id="decimalPlaces" name="decimalPlaces" disabled = "true">
@@ -44,11 +47,10 @@
                   <option value="4">0.0001</option>
                   <option value="5">0.00001</option>
                </select>
+
                <input type="checkbox" id="allowDupes" class="checkbox" name="allowDupes" value="allowDupes" checked>
                <label for="allowDupes" class="checkLabel">Allow duplicates</label>
 
-               <input type="checkbox" id="sortResults" class="checkbox" name="sortResults" value="sortResults" onclick="syncSortBoxes(this.checked)">
-               <label for="sortResults" class="checkLabel">Sort results</label>
                <p></p> <!-- Left blank for spacing -->
             </div>
 
@@ -101,15 +103,19 @@
 
       <!-- Settings tab -->
       <div id="settingstab" class="tabcontent">
-         <p>Settings</p>
-         <button type="button" onclick="clearHistory()" class="btn">Clear history</button>
-         <p></p> <!-- Left blank for spacing -->
+         </br>
+         
+         
          <label for="theme-dropdown">Theme:</label>
             <select id="theme-dropdown" name="theme-dropdown">
-                <option value="0">Light</option>
-                <!-- <option value="1">Dark</option> -->
-                <!-- <option value="2">Black</option> -->
+                <option value="Light">Light</option>
+                <!-- <option value="Dark">Dark</option> -->
+                <!-- <option value="Black">Black</option> -->
             </select>
+
+         <p></p> <!-- Left blank for spacing -->
+
+         <button type="button" onclick="clearHistory()" class="btn">Clear history</button>
       </div> <!-- End settings tab -->
 
       <!-- About tab -->
