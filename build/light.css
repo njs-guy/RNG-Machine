@@ -32,24 +32,66 @@
     --innerShad: inset 3px 3px 7px 1px rgba(0,0,0,0.33);
 }
 
+.light-theme {
+    --bodyBg: linen;
+    --tabBg: white;
+    --tabHovBg: lightgray;
+    --panelColor: whitesmoke;
+    --btnColor: #555555;
+    --btnHovColor: #008d59;
+    --mainAccent: darkgreen;
+    --textColor: black;
+    --activeTextColor: white;
+    --inputBgColor: var(--fakeWhite);
+    --borderColor: 1px solid darkgray;
+}
+
+/* Unfinished */
+.dark-theme {
+    --bodyBg: darkgray;
+    --tabBg: white;
+    --tabHovBg: lightgray;
+    --panelColor: whitesmoke;
+    --btnColor: #555555;
+    --btnHovColor: #008d59;
+    --mainAccent: darkgreen;
+    --textColor: black;
+    --activeTextColor: white;
+    --borderColor: 1px solid darkgray;
+}
+
+/* Unfinished */
+.black-theme {
+    --bodyBg: black;
+    --tabBg: white;
+    --tabHovBg: lightgray;
+    --panelColor: whitesmoke;
+    --btnColor: #555555;
+    --btnHovColor: #008d59;
+    --mainAccent: darkgreen;
+    --textColor: black;
+    --activeTextColor: white;
+    --borderColor: 1px solid darkgray;
+}
+
 body {
-    color: var(--lightTextColor);
+    color: var(--textColor);
     font-family: var(--fontFamily);
     font-size: var(--mainFontSize);
-    background-color: var(--lightBodyBg);
+    background-color: var(--bodyBg);
 }
 
 input[type=number], select {
     font-family: inherit;
     font-size: var(--tabFontSize);
-    background-color: var(--fakeWhite);
+    background-color: var(--inputBgColor);
     padding: var(--thinPad);
     border-radius: var(--btnBorderRad);
-    border: 1px solid var(--lightMainAccent);
+    border: 1px solid var(--mainAccent);
 }
 
 input[type=number]:focus {
-    outline-color: var(--lightMainAccent);
+    outline-color: var(--mainAccent);
 }
 
 input[type=number] {
@@ -64,10 +106,10 @@ input::-webkit-inner-spin-button {
 }
 
 .box {
-    background-color: var(--lightPanelColor);
+    background-color: var(--panelColor);
     padding: var(--stdPad);
     border-radius: var(--borderRad);
-    border: var(--lightBorder);
+    border: var(--borderColor);
     box-shadow: var(--dropShad);
 }
 
@@ -77,15 +119,15 @@ input::-webkit-inner-spin-button {
     outline: none;
     font-weight: bold;
     border-radius: var(--btnBorderRad);
-    background-color: var(--lightMainAccent);
-    color: var(--lightActiveTextColor);
+    background-color: var(--mainAccent);
+    color: var(--activeTextColor);
     font-size: var(--tabFontSize);
     padding: var(--stdPad);
     box-shadow: var(--dropShad);
 }
 
 .btn:hover {
-    background-color: var(--lightBtnHovColor);
+    background-color: var(--btnHovColor);
     transition: var(--transDur);
 }
 
@@ -97,7 +139,7 @@ input::-webkit-inner-spin-button {
 
 .tabbar {
     margin: -10px;
-    background-color: var(--lightTabBg);
+    background-color: var(--tabBg);
     border-radius: 9px 9px 0px 0px;
 }
 
@@ -108,7 +150,7 @@ input::-webkit-inner-spin-button {
     font-size: var(--tabFontSize);
     text-align: center;
     cursor: pointer;
-    background-color: var(--lightPanelColor);
+    background-color: var(--panelColor);
     padding: var(--stdPad);
     border: none;
     outline: none;
@@ -116,18 +158,18 @@ input::-webkit-inner-spin-button {
 }
 
 .tablinks:hover {
-    background-color: var(--lightTabHovBg);
+    background-color: var(--tabHovBg);
     transition: var(--transDur);
 }
 
 .active {
-    color: var(--lightActiveTextColor);
-    background-color: var(--lightMainAccent);
+    color: var(--activeTextColor);
+    background-color: var(--mainAccent);
     transition: var(--transDur);
 }
 
 .active:hover {
-    background-color: var(--lightMainAccent);
+    background-color: var(--mainAccent);
 }
 
 .tabcontent {

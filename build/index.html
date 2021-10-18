@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="light.css"/>
 </head>
-<body>
+<body class="light-theme">
 
    <div class="box" id="mainpanel">
 
@@ -105,12 +105,11 @@
       <div id="settingstab" class="tabcontent">
          </br>
          
-         
          <label for="theme-dropdown">Theme:</label>
-            <select id="theme-dropdown" name="theme-dropdown">
-                <option value="Light">Light</option>
-                <!-- <option value="Dark">Dark</option> -->
-                <!-- <option value="Black">Black</option> -->
+            <select id="theme-dropdown" name="theme-dropdown" value="light-theme" onchange="changeTheme(this.value)">
+                <option value="light-theme">Light</option>
+                <option value="dark-theme">Dark (WIP)</option>
+                <option value="black-theme">Black (WIP)</option>
             </select>
 
          <p></p> <!-- Left blank for spacing -->

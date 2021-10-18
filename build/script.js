@@ -248,14 +248,19 @@ function clearHistory() {
     while(historyList.hasChildNodes()) {
         historyList.removeChild(historyList.firstChild)
     }
-    
-    
 }
 
 // If the checkbox next to the decimal places drop down is not checked, make the dropdown disabled
 function disableDecimalDropdown(checkValue) {
     var decimalPlaces = document.getElementById("decimalPlaces");
     decimalPlaces.disabled = checkValue;
+}
+
+function changeTheme(newTheme = "light-theme") {
+    const body = document.getElementsByTagName("body")[0];
+
+    body.className = ''; // Clears current body classes
+    body.classList.add(newTheme); // Adds new theme as a class
 }
 
 // Open the default tab on start
