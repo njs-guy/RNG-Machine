@@ -3,13 +3,13 @@ function openTab(evt, tabName) {
     var i, tablinks;
 
     // Get all elements with class "tabcontent" and hide them
-    tabcontent = document.getElementsByClassName("tabcontent");
+    var tabcontent = document.getElementsByClassName("tabcontent");
     for(i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
     }
 
     // Get all elements with class "tablinks" and remove class "active"
-    tablinks = document.getElementsByClassName("tablinks");
+    var tablinks = document.getElementsByClassName("tablinks");
     for (i = 0; i <tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
@@ -22,9 +22,9 @@ function openTab(evt, tabName) {
 // Hides the history panel
 function hideHistory() {
     // Declare id variables
-    var historyBox = document.getElementById("historybox");
-    var historyText = document.getElementById("historytext");
-    var hide_history = document.getElementById("hidehistory");
+    const historyBox = document.getElementById("historybox");
+    const historyText = document.getElementById("historytext");
+    const hide_history = document.getElementById("hidehistory");
 
     // Hide historybox and historytext
     historyBox.style.display = "none";
@@ -38,9 +38,9 @@ function hideHistory() {
 // Shows the history panel
 function showHistory() {
     // Declare id variables
-    var historyBox = document.getElementById("historybox");
-    var historyText = document.getElementById("historytext");
-    var hide_history = document.getElementById("hidehistory");
+    const historyBox = document.getElementById("historybox");
+    const historyText = document.getElementById("historytext");
+    const hide_history = document.getElementById("hidehistory");
 
     // Hide historybox and historytext
     historyBox.style.display = "initial";
@@ -117,10 +117,10 @@ function generateNumbers(amount = 5, min = 1, max = 100, sort = false, allowDupe
 
 // Outputs numbers to the output and history panels
 function outputNumbers(randNums, coins = false) {
-    var outputBox = document.getElementById("outputbox");
+    const outputBox = document.getElementById("outputbox");
     outputBox.textContent = ""; // reset output text
 
-    var historyBox = document.getElementById("historylist");
+    const historyBox = document.getElementById("historylist");
 
     // If the output should be heads or tails, convert numbers in array. 1 is heads, 2 is tails.
     if(coins) {
@@ -172,7 +172,7 @@ function generateFromNumbersTab() {
 // Rolls dice using info from Dice Roll tab
 function rollDice() {
     var quantity = parseInt(document.getElementById("quantityDice").value);
-    var rangeMin = 1;
+    const rangeMin = 1;
     var rangeMax = parseInt(document.getElementById("sides").value);
     var sort = document.getElementById("sortResults").checked;
 
@@ -191,7 +191,7 @@ function flipCoins() {
 
 // Takes what's currently in the output panel and copies it to the clipboard
 function copyOutput() {
-    var output = document.getElementById("outputbox");
+    const output = document.getElementById("outputbox");
 
     if (output.textContent !== "No numbers yet.") {
         navigator.clipboard.writeText(output.textContent);
@@ -203,8 +203,8 @@ function copyOutput() {
 
 // Takes what's currently in the history panel and copies it to the clipboard
 function copyHistory() {
-    var historyList = document.getElementById("historylist");
-    var historyItems = historyList.getElementsByClassName("history-item");
+    const historyList = document.getElementById("historylist");
+    const historyItems = historyList.getElementsByClassName("history-item");
     var output = "";
 
     if(historyItems.length > 0){
@@ -227,9 +227,9 @@ function copyHistory() {
 
 // Makes sure every sort checkbox has the same value
 function syncSortBoxes(checkValue) {
-    var sortResults = document.getElementById("sortResults");
-    var sortDice = document.getElementById("sortDice");
-    var sortCoins = document.getElementById("sortCoins");
+    const sortResults = document.getElementById("sortResults");
+    const sortDice = document.getElementById("sortDice");
+    const sortCoins = document.getElementById("sortCoins");
 
     sortResults.checked = checkValue;
     sortDice.checked = checkValue;
@@ -238,10 +238,8 @@ function syncSortBoxes(checkValue) {
 
 // Clears the history and output panels
 function clearHistory() {
-    console.log("Wow")
-    var outputBox = document.getElementById("outputbox");
-    var historyList = document.getElementById("historylist");
-    // var historyItems = historyList.getElementsByClassName("history-item");
+    const outputBox = document.getElementById("outputbox");
+    const historyList = document.getElementById("historylist");
 
     outputBox.textContent = "No numbers yet."; // reset output text
 
@@ -252,7 +250,7 @@ function clearHistory() {
 
 // If the checkbox next to the decimal places drop down is not checked, make the dropdown disabled
 function disableDecimalDropdown(checkValue) {
-    var decimalPlaces = document.getElementById("decimalPlaces");
+    const decimalPlaces = document.getElementById("decimalPlaces");
     decimalPlaces.disabled = checkValue;
 }
 
