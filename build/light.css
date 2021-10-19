@@ -5,20 +5,7 @@
     --mainFontSize: 1.5em;
     --tabFontSize: 14px;
 
-    /* Light theme colors */
-    --lightBodyBg: linen;
-    --lightTabBg: white;
-    --lightTabHovBg: lightgray;
-    --lightPanelColor: whitesmoke;
-    --lightBtnColor: #555555;
-    --lightBtnHovColor: rgb(0, 141, 89);
-    --lightMainAccent: darkgreen;
-    --lightTextColor: black;
-    --lightActiveTextColor: white;
-    --lightBorder: 1px solid darkgray;
     --fakeWhite: #fefefe; /* Effectively still white but changes select's background on Firefox */
-
-    /* Dark theme colors */
 
     /* Properties */
     --fontFamily: 'Fira Sans', Arial, sans-serif;
@@ -32,56 +19,71 @@
     --innerShad: inset 3px 3px 7px 1px rgba(0,0,0,0.33);
 }
 
-.light-theme {
+body {
+    color: var(--textColor);
+    font-family: var(--fontFamily);
+    font-size: var(--mainFontSize);
+    background-color: var(--bodyBg);
+
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;  
+}
+
+body.light-theme {
     --bodyBg: linen;
     --tabBg: white;
     --tabHovBg: lightgray;
     --panelColor: whitesmoke;
     --btnColor: #555555;
     --btnHovColor: #008d59;
-    --mainAccent: darkgreen;
+    --mainAccent: #438836;
     --textColor: black;
     --activeTextColor: white;
+    --inactiveTabTextColor: darkslategray;
+    --disabledSelectColor: gray;
+    --disabledSelectBgColor: #cccccc;
     --inputBgColor: var(--fakeWhite);
     --borderColor: 1px solid darkgray;
 }
 
-/* Unfinished */
-.dark-theme {
-    --bodyBg: darkgray;
-    --tabBg: white;
+body.dark-theme {
+    --bodyBg: #121212;
+    --tabBg: black;
     --tabHovBg: lightgray;
-    --panelColor: whitesmoke;
+    --panelColor: #1E1E1E;
     --btnColor: #555555;
     --btnHovColor: #008d59;
-    --mainAccent: darkgreen;
-    --textColor: black;
+    --mainAccent: #206126;
+    --textColor: #CECECE;
     --activeTextColor: white;
-    --borderColor: 1px solid darkgray;
+    --inactiveTabTextColor: darkgray;
+    --disabledSelectColor: gray;
+    --disabledSelectBgColor: black;
+    --inputBgColor: #1E1E1E;
+    --borderColor: 1px solid black;
 }
 
-/* Unfinished */
-.black-theme {
+body.black-theme {
     --bodyBg: black;
-    --tabBg: white;
-    --tabHovBg: lightgray;
-    --panelColor: whitesmoke;
+    --tabBg: #1E1E1E;
+    --tabHovBg: gray;
+    --panelColor: black;
     --btnColor: #555555;
     --btnHovColor: #008d59;
-    --mainAccent: darkgreen;
-    --textColor: black;
+    --mainAccent: #556E50;
+    --textColor: white;
     --activeTextColor: white;
-    --borderColor: 1px solid darkgray;
-}
-
-body {
-    color: var(--textColor);
-    font-family: var(--fontFamily);
-    font-size: var(--mainFontSize);
-    background-color: var(--bodyBg);
+    --inactiveTabTextColor: darkgray;
+    --disabledSelectColor: gray;
+    --disabledSelectBgColor: #1E1E1E;
+    --inputBgColor: black;
+    --borderColor: 1px solid #555555;
 }
 
 input[type=number], select {
+    color: var(--textColor);
     font-family: inherit;
     font-size: var(--tabFontSize);
     background-color: var(--inputBgColor);
@@ -96,6 +98,12 @@ input[type=number]:focus {
 
 input[type=number] {
     -moz-appearance: textfield; /* Removes num arrows */
+}
+
+/* Inactive select */
+select:disabled {
+    color: var(--inactiveTabTextColor);
+    background: var(--disabledSelectBgColor);
 }
 
 /* Removes num arrows */
@@ -120,7 +128,7 @@ input::-webkit-inner-spin-button {
     font-weight: bold;
     border-radius: var(--btnBorderRad);
     background-color: var(--mainAccent);
-    color: var(--activeTextColor);
+    color: white;
     font-size: var(--tabFontSize);
     padding: var(--stdPad);
     box-shadow: var(--dropShad);
@@ -144,6 +152,7 @@ input::-webkit-inner-spin-button {
 }
 
 .tablinks {
+    color: var(--inactiveTabTextColor);
     margin-top: 5px;
     margin-left: 5px;
     font-family: var(--fontFamily);
