@@ -233,3 +233,45 @@ input::-webkit-inner-spin-button {
     word-wrap: break-word;
     white-space: pre-line;
 }
+
+#popup-message {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    color: var(--textColor);
+    background-color: var(--panelColor);
+    border: var(--borderColor);
+    box-shadow: var(--dropShad);
+    text-align: center;
+    padding: var(--stdPad);
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+}
+
+#popup-message.show {
+    visibility: visible;
+    -webkit-animation: slidein 0.5s, slideout 0.5s 2.5s;
+    animation: slidein 0.5s, slideout 0.5s 2.5s;
+}
+
+@-webkit-keyframes slidein {
+    from {bottom: -30px; opacity: 0;}
+    to {buttom: 30px; opacity: 100;}
+}
+
+@keyframes slidein {
+    from {bottom: -30px; opacity: 0;}
+    to {buttom: 30px; opacity: 100;}
+}
+
+@-webkit-keyframes slideout {
+    from {bottom: 30px; opacity: 100;}
+    to {bottom: -30px; opacity: 0;}
+}
+
+@keyframes slideout {
+    from {bottom: 30px; opacity: 100;}
+    to {bottom: -30px; opacity: 0;}
+}

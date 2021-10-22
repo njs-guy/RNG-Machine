@@ -94,7 +94,7 @@ function generateNumbers(amount = 5, min = 1, max = 100, sort = false, allowDupe
 
             // Breaks the loop if infinite. Returns an array of one string labeled "null"
             if (loopCount >= 100){
-                alert("Infinite loop error. No result.");
+                showPopupMessage("Infinite loop error. No result.");
                 nullOutput = [];
                 nullOutput.push("null");
                 return nullOutput;
@@ -195,9 +195,9 @@ function copyOutput() {
 
     if (output.textContent !== "No numbers yet.") {
         navigator.clipboard.writeText(output.textContent);
-        alert("Copied output to clipboard."); // Temp message
+        showPopupMessage("Copied output to clipboard.");
     } else {
-        alert("There is no output to copy yet."); // Temp message
+        showPopupMessage("There is no output to copy yet.");
     }
 }
 
@@ -218,10 +218,10 @@ function copyHistory() {
         }
 
         navigator.clipboard.writeText(output);
-        alert("Copied history to clipboard."); // Temp message
+        showPopupMessage("Copied history to clipboard.");
 
     } else {
-        alert("There is no history to output yet.")
+        showPopupMessage("There is no history to copy yet.");
     }
 }
 
@@ -259,6 +259,14 @@ function changeTheme(newTheme = "light-theme") {
 
     body.className = ''; // Clears current body classes
     body.classList.add(newTheme); // Adds new theme as a class
+}
+
+function showPopupMessage(message = "Error.") {
+    const popMess = document.getElementById("popup-message");
+
+    popMess.textContent = message;
+    popMess.className = "show";
+    setTimeout(function(){popMess.className = popMess.className.replace("show", ""); }, 3000);
 }
 
 // Open the default tab on start
