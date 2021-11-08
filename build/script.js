@@ -259,6 +259,8 @@ function changeTheme(newTheme = "light-theme") {
 
     body.className = ''; // Clears current body classes
     body.classList.add(newTheme); // Adds new theme as a class
+
+    saveSettings();
 }
 
 function showPopupMessage(message = "Error.") {
@@ -269,8 +271,28 @@ function showPopupMessage(message = "Error.") {
     setTimeout(function(){popMess.className = popMess.className.replace("show", ""); }, 3000);
 }
 
+function saveSettings() {
+    const sortResults = document.getElementById("sortResults");
+    const currentTheme = document.getElementById("theme-dropdown");
+
+    localStorage.sort = sortResults.checked;
+    localStorage.currentTheme = currentTheme.value;
+}
+
+function loadSettings() {
+    // Start tab
+
+    // Sort results
+    syncSortBoxes(localStorage.sort);
+
+    // Theme
+    changeTheme(localStorage.currentTheme);
+}
+
 // Open the default tab on start
 document.getElementById("defaultOpen").click();
 
 // Hide history by default
 hideHistory();
+
+loadSettings();
