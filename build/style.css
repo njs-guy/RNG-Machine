@@ -50,7 +50,7 @@ body.dark-theme {
     --panelColor: #1E1E1E;
     --btnColor: #555555;
     --btnHovColor: #008d59;
-    --mainAccent: #206126;
+    --mainAccent: #556E50;
     --textColor: #CECECE;
     --activeTextColor: white;
     --inactiveTabTextColor: darkgray;
@@ -63,11 +63,11 @@ body.dark-theme {
 body.black-theme {
     --bodyBg: black;
     --tabBg: #1E1E1E;
-    --tabHovBg: gray;
+    --tabHovBg: #292929;
     --panelColor: black;
     --btnColor: #555555;
     --btnHovColor: #008d59;
-    --mainAccent: #556E50;
+    --mainAccent: #646464;
     --textColor: white;
     --activeTextColor: white;
     --inactiveTabTextColor: darkgray;
