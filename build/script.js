@@ -274,13 +274,36 @@ function showPopupMessage(message = "Error.") {
 function saveSettings() {
     const sortResults = document.getElementById("sortResults");
     const currentTheme = document.getElementById("theme-dropdown");
+    const defaultTab = document.getElementById("tab-dropdown");
+    const showHistoryCheck = document.getElementById("showHistoryStart");
 
     localStorage.sort = sortResults.checked;
     localStorage.currentTheme = currentTheme.value;
+    localStorage.defaultTab = defaultTab.value;
+    localStorage.showHistoryStart = String(showHistoryCheck.checked);
 }
 
 function loadSettings() {
     // Start tab
+    tab = localStorage.defaultTab;
+
+    switch(tab){
+        case "numbers":
+            document.getElementById("num-link").id = "defaultOpen";
+            break;
+        case "dice":
+            document.getElementById("dice-link").id = "defaultOpen";
+            break;
+        case "coin":
+            document.getElementById("coin-link").id = "defaultOpen";
+            break;
+        case "presets":
+            document.getElementById("presets-link").id = "defaultOpen";
+            break;
+        default:
+            document.getElementById("num-link").id = "defaultOpen";
+    }
+
 
     // Sort results
     syncSortBoxes(localStorage.sort);
@@ -301,12 +324,14 @@ function loadSettings() {
             selectedThemeIndex = "2";
             break;
     }
+
+    if(localStorage.showHistoryStart === "false"){
+        hideHistory();
+    }
 }
+
+// Load user settings
+loadSettings();
 
 // Open the default tab on start
 document.getElementById("defaultOpen").click();
-
-// Hide history by default
-hideHistory();
-
-loadSettings();

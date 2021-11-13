@@ -12,12 +12,12 @@
 
          <!-- Tab buttons -->
          <div class="tabbar">
-            <button class="tablinks" id="defaultOpen" onclick="openTab(event, 'numberstab')">Numbers</button>
-            <button class="tablinks" onclick="openTab(event, 'dicerolltab')">Dice Roll</button>
-            <button class="tablinks" onclick="openTab(event, 'coinfliptab')">Coin Flip</button>
-            <button class="tablinks" onclick="openTab(event, 'presetstab')">Presets</button>
-            <button class="tablinks" onclick="openTab(event, 'settingstab')">Settings</button>
-            <button class="tablinks" onclick="openTab(event, 'abouttab')">About</button>
+            <button class="tablinks" id="num-link" onclick="openTab(event, 'numberstab')">Numbers</button>
+            <button class="tablinks" id="dice-link" onclick="openTab(event, 'dicerolltab')">Dice Roll</button>
+            <button class="tablinks" id="coin-link" onclick="openTab(event, 'coinfliptab')">Coin Flip</button>
+            <button class="tablinks" id="presets-link" onclick="openTab(event, 'presetstab')">Presets</button>
+            <button class="tablinks" id="settings-link" onclick="openTab(event, 'settingstab')">Settings</button>
+            <button class="tablinks" id="about-link" onclick="openTab(event, 'abouttab')">About</button>
          </div>
 
          <!-- Numbers tab -->
@@ -106,12 +106,24 @@
             </br>
             
             <label for="theme-dropdown">Theme:</label>
-               <select id="theme-dropdown" name="theme-dropdown" value="light-theme" onchange="changeTheme(this.value)">
-                  <option value="light-theme">Light</option>
-                  <option value="dark-theme">Dark</option>
-                  <option value="black-theme">Black</option>
-               </select>
+            <select id="theme-dropdown" name="theme-dropdown" onchange="changeTheme(this.value)">
+               <option value="light-theme">Light</option>
+               <option value="dark-theme">Dark</option>
+               <option value="black-theme">Black</option>
+            </select>
+            <p></p> <!-- Left blank for spacing -->
 
+            <label for="tab-dropdown">Default tab:</label>
+            <select id="tab-dropdown" name="tab-dropdown" onchange="saveSettings()">
+               <option value="numbers">Numbers</option>
+               <option value="dice">Dice Roll</option>
+               <option value="coin">Coin Flip</option>
+               <option value="presets">Presets</option>
+            </select>
+            <p></p> <!-- Left blank for spacing -->
+
+            <input type="checkbox" id="showHistoryStart" class="checkbox" name="showHistoryStart" onclick="saveSettings()">
+            <label for="showHistoryStart" class="checkLabel">Show history on start</label>
             <p></p> <!-- Left blank for spacing -->
 
             <button type="button" onclick="clearHistory()" class="btn">Clear history</button>
