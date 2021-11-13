@@ -286,7 +286,21 @@ function loadSettings() {
     syncSortBoxes(localStorage.sort);
 
     // Theme
-    changeTheme(localStorage.currentTheme);
+    var currentTheme = localStorage.currentTheme;
+    var selectedThemeIndex = document.getElementById("theme-dropdown").selectedIndex;
+
+    changeTheme(currentTheme);
+    switch(String(currentTheme)) {
+        case "light-theme":
+            selectedThemeIndex = "0";
+            break;
+        case "dark-theme":
+            selectedThemeIndex = "1";
+            break;
+        case "black-theme":
+            selectedThemeIndex = "2";
+            break;
+    }
 }
 
 // Open the default tab on start
