@@ -197,6 +197,18 @@ function usePreset(preset=1) {
             nums = generateNumbers(parseInt(document.getElementById("num-preset").value), 1, 100, true);
             outputNumbers(nums);
             break;
+        case 2:
+            nums = generateNumbers(parseInt(document.getElementById("d6-preset").value), 1, 6, true);
+            outputNumbers(nums);
+            break;
+        case 3:
+            nums = generateNumbers(parseInt(document.getElementById("d20-preset").value), 1, 20, true);
+            outputNumbers(nums);
+            break;
+        case 4:
+            nums = generateNumbers(parseInt(document.getElementById("coin-preset").value), 1, 2, true);
+            outputNumbers(nums, true);
+            break;
         default:
             console.log("Undefined preset");
     }
