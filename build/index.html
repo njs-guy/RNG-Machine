@@ -82,7 +82,7 @@
             </form>
          </div> <!-- End dice roll tab -->
 
-      <!-- Coin Flip tab -->
+         <!-- Coin Flip tab -->
          <div id="coinfliptab" class="tabcontent">
          <p></p> <!-- Left blank for spacing -->
             <form>
@@ -96,9 +96,14 @@
             </form>
          </div> <!-- End coin flip tab -->
 
-      <!-- Presets tab -->
+         <!-- Presets tab -->
+         <p></p> <!-- Left blank for spacing -->
          <div id="presetstab" class="tabcontent">
-            <p>Presets</p>
+            <div class="preset-desc">
+               <p>Generate <input type="number" class="preset-num" id="num-preset" name="rangeMax" min="2" max="20" value="5"> numbers from 1 to 100</p>
+            </div>
+            <button type="button" onclick="usePreset(1)" class="btn btn-preset">GO</button> 
+            
          </div> <!-- End presets tab -->
 
          <!-- Settings tab -->

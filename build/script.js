@@ -189,6 +189,19 @@ function flipCoins() {
     outputNumbers(nums, true);
 }
 
+function usePreset(preset=1) {
+    var nums = [];
+
+    switch(preset){
+        case 1:
+            nums = generateNumbers(parseInt(document.getElementById("num-preset").value), 1, 100, true);
+            outputNumbers(nums);
+            break;
+        default:
+            console.log("Undefined preset");
+    }
+}
+
 // Takes what's currently in the output panel and copies it to the clipboard
 function copyOutput() {
     const output = document.getElementById("outputbox");

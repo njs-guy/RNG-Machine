@@ -92,6 +92,7 @@ input[type=number]:focus {
 }
 
 input[type=number] {
+    width: 60px;
     -moz-appearance: textfield; /* Removes num arrows */
 }
 
@@ -139,6 +140,24 @@ input::-webkit-inner-spin-button {
     text-align: center;
     margin-top: 15px;
 }
+
+.btn-preset {
+    clear: right;
+    float: right;
+    margin-left: 2em;
+    margin-top: 1.5em;
+    width: 5em;
+}
+
+.preset-desc {
+    float: left;
+}
+
+/*
+.preset-num {
+    width: 75px;
+}
+*/
 
 .tabbar {
     margin: -10px;
