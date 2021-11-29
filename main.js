@@ -9,7 +9,8 @@ const loadMainWindow = () => {
         icon: path.join(__dirname, "./build/r_icon.png"),
         webPreferences: {
             nodeIntegration: true
-        }
+        },
+        
     });
 
     mainWindow.loadURL(
@@ -20,7 +21,8 @@ const loadMainWindow = () => {
         })
        );
 
-    //mainWindow.loadFile(path.join(__dirname, "index.html"));
+    
+    mainWindow.setMenu(null);
 }
 
 app.on("ready", loadMainWindow);
