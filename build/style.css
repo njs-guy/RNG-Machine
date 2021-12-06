@@ -204,6 +204,17 @@ input::-webkit-inner-spin-button {
     font-size: var(--tabFontSize);
 }
 
+.logo {
+    float: left;
+    height: 64px;
+    margin-right: 15px;
+}
+
+.title {
+    display: inline;
+    vertical-align: middle;
+}
+
 #mainpanel {
     width: 70%;
     display: table;

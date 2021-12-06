@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="40mm"
+   height="40mm"
+   viewBox="0 0 40 40"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="RNG Machine logo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="3.9268799"
+     inkscape:cx="6.8756877"
+     inkscape:cy="106.06385"
+     inkscape:window-width="2560"
+     inkscape:window-height="1377"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <rect
+       x="76.905838"
+       y="133.43927"
+       width="84.036186"
+       height="92.18515"
+       id="rect12507" />
+    <rect
+       x="201.17754"
+       y="178.76788"
+       width="233.26407"
+       height="189.46339"
+       id="rect2753" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-66.887779,-42.475895)">
+    <rect
+       style="fill:#438836;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect1010"
+       width="39.5"
+       height="39.5"
+       x="67.137779"
+       y="42.725895" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 2"
+     transform="translate(-66.887779,-42.475895)">
+    <path
+       id="text2751"
+       style="font-weight:bold;font-size:144px;line-height:1.25;font-family:Cabin;-inkscape-font-specification:'Cabin Bold';white-space:pre;shape-inside:url(#rect2753);stroke-width:0.264583"
+       d="m 77.103414,44.814762 -7.315313,16.840317 v 4.000272 h 10.858767 l 0.03824,5.562449 h 5.867342 v -5.562449 h 2.89543 v -4.49585 H 86.55245 V 55.06375 h -5.181595 l -0.648023,6.095751 h -4.724259 l 6.210474,-14.439945 z m 16.908013,8.436695 c -2.166258,-0.01053 -4.250156,0.560821 -6.251816,1.71359 l 2.131656,3.843692 c 1.857012,-1.094505 3.662341,-1.430653 5.41569,-1.008724 1.03719,0.249592 1.789856,0.705106 2.257742,1.366327 0.473826,0.636524 0.600734,1.411721 0.380854,2.325438 -0.249592,1.037191 -0.763788,1.762102 -1.542541,2.175577 -0.778751,0.413477 -1.723692,0.486529 -2.834969,0.219109 L 92.12317,63.5392 l -1.601452,3.886068 2.074291,0.499195 c 1.358228,0.326845 2.302817,0.854411 2.832902,1.582848 0.560723,0.709684 0.686258,1.706372 0.377238,2.990514 -0.27336,1.135973 -0.845508,1.938906 -1.716173,2.40864 -0.870667,0.469733 -1.886177,0.565076 -3.046843,0.285771 -0.963107,-0.231764 -1.807382,-0.630812 -2.533179,-1.197343 -0.695159,-0.585287 -1.361779,-1.398997 -1.999361,-2.440678 l -3.888134,2.316655 c 1.468231,3.018075 4.029419,4.967158 7.684285,5.84667 2.000298,0.481356 3.79993,0.548325 5.398638,0.201538 1.623401,-0.340844 2.944977,-1.001988 3.96513,-1.984375 1.026098,-1.007081 1.708688,-2.214901 2.047418,-3.622516 0.45165,-1.876825 0.2684,-3.448995 -0.54983,-4.717026 -0.8123,-1.292725 -2.037052,-2.227514 -3.674714,-2.80448 1.662755,-0.07012 3.035334,-0.510403 4.118614,-1.320851 1.10797,-0.804502 1.84356,-1.960057 2.20606,-3.466454 0.28525,-1.185362 0.21021,-2.339795 -0.22479,-3.463353 -0.41031,-1.117616 -1.17684,-2.112219 -2.2996,-2.983281 -1.09807,-0.865118 -2.52391,-1.508185 -4.277259,-1.930114 -1.01867,-0.245136 -2.020321,-0.370387 -3.004984,-0.375171 z" />
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text12505"
+       style="font-weight:bold;font-size:72px;line-height:1.25;font-family:Cabin;-inkscape-font-specification:'Cabin Bold';white-space:pre;shape-inside:url(#rect12507)" />
+  </g>
+</svg>
