@@ -5,7 +5,7 @@ const url = require("url");
 const loadMainWindow = () => {
     const mainWindow = new BrowserWindow({
         width : 1100,
-        height: 600,
+        height: 700,
         icon: path.join(__dirname, "./build/r_icon.png"),
         webPreferences: {
             nodeIntegration: true

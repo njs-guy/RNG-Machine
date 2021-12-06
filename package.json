@@ -1,7 +1,7 @@
 {
   "name": "rng-machine",
-  "version": "0.1.0",
-  "description": "A WIP Random Number Generator. Currently being rebuilt in HTML/CSS/Javascript and Electron. Old code can be found in the \"old\" branch. More detailed readme coming soon.",
+  "version": "1.0.0",
+  "description": "A modern random number generator",
   "main": "main.js",
   "scripts": {
     "postinstall": "install-app-deps",
