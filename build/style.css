@@ -1,4 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+/* fira-sans-regular - latin */
+@font-face {
+    font-family: 'Fira Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fonts/fira-sans-v15-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('./fonts/fira-sans-v15-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('./fonts/fira-sans-v15-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('./fonts/fira-sans-v15-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('./fonts/fira-sans-v15-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('./fonts/fira-sans-v15-latin-regular.svg#FiraSans') format('svg'); /* Legacy iOS */
+  }
 
 :root {
     /* Font sizes */
@@ -121,11 +133,12 @@ input::-webkit-inner-spin-button {
     cursor: pointer;
     border: none;
     outline: none;
+    color: white;
+    font-family: var(--fontFamily);
+    font-size: var(--tabFontSize);
     font-weight: bold;
     border-radius: var(--btnBorderRad);
     background-color: var(--mainAccent);
-    color: white;
-    font-size: var(--tabFontSize);
     padding: var(--stdPad);
     box-shadow: var(--dropShad);
 }
