@@ -44,8 +44,8 @@ body.light-theme {
     --tabHovBg: lightgray;
     --panelColor: whitesmoke;
     --btnColor: #555555;
-    --btnHovColor: #008d59;
-    --mainAccent: #438836;
+    --btnHovColor: #3CB043;
+    --mainAccent: #028A0F;
     --textColor: black;
     --activeTextColor: white;
     --inactiveTabTextColor: darkslategray;
@@ -58,11 +58,11 @@ body.light-theme {
 body.dark-theme {
     --bodyBg: #121212;
     --tabBg: black;
-    --tabHovBg: lightgray;
-    --panelColor: #1E1E1E;
+    --tabHovBg: #373737;
+    --panelColor: #202020;
     --btnColor: #555555;
-    --btnHovColor: #008d59;
-    --mainAccent: #556E50;
+    --btnHovColor: #607D3B;
+    --mainAccent: #234F1E;
     --textColor: #CECECE;
     --activeTextColor: white;
     --inactiveTabTextColor: darkgray;
@@ -78,7 +78,7 @@ body.black-theme {
     --tabHovBg: #292929;
     --panelColor: black;
     --btnColor: #555555;
-    --btnHovColor: #008d59;
+    --btnHovColor: #808080;
     --mainAccent: #646464;
     --textColor: white;
     --activeTextColor: white;
@@ -165,12 +165,6 @@ input::-webkit-inner-spin-button {
 .preset-desc {
     float: left;
 }
-
-/*
-.preset-num {
-    width: 75px;
-}
-*/
 
 .tabbar {
     margin: -10px;
