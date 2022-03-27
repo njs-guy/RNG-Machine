@@ -1,16 +1,16 @@
 // Opens and closes tabs
 function openTab(evt, tabName) {
-    var i, tablinks;
+    let i, tablinks;
     let tabN = document.getElementById(tabName);
 
     // Get all elements with class "tabcontent" and hide them
-    var tabcontent = document.getElementsByClassName("tabcontent");
+    let tabcontent = document.getElementsByClassName("tabcontent");
     for(i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
     }
 
     // Get all elements with class "tablinks" and remove class "active"
-    var tablinks = document.getElementsByClassName("tablinks");
+    tablinks = document.getElementsByClassName("tablinks");
     for (i = 0; i <tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
@@ -22,7 +22,7 @@ function openTab(evt, tabName) {
 
 // Hides the history panel
 function hideHistory() {
-    // Declare id variables
+    // Declare id constants
     const historyBox = document.getElementById("historybox");
     const historyText = document.getElementById("historytext");
     const hide_history = document.getElementById("hidehistory");
@@ -38,7 +38,7 @@ function hideHistory() {
 
 // Shows the history panel
 function showHistory() {
-    // Declare id variables
+    // Declare id constants
     const historyBox = document.getElementById("historybox");
     const historyText = document.getElementById("historytext");
     const hide_history = document.getElementById("hidehistory");
@@ -65,12 +65,12 @@ function generateNumbers(amount = 5, min = 1, max = 100, sort = false, allowDupe
         min = 0;
     }
 
-    var output = []; //array of results
-    var dupe = false; //If current number is a duplicate
-    var loopCount = 0; //Number of rerolls for current number
-    var n = 0; //Current number
+    let output = []; //array of results
+    let dupe = false; //If current number is a duplicate
+    let loopCount = 0; //Number of rerolls for current number
+    let n = 0; //Current number
 
-    for( var x = 0; x < amount; x ++) {
+    for( let x = 0; x < amount; x ++) {
         
         do { //Loop the following until there is not a duplicate
 
@@ -125,7 +125,7 @@ function outputNumbers(randNums, coins = false) {
 
     // If the output should be heads or tails, convert numbers in array. 1 is heads, 2 is tails.
     if(coins) {
-        for( var x = 0; x < randNums.length; x++) {
+        for( let x = 0; x < randNums.length; x++) {
             switch (randNums[x]) {
                 case 1:
                     randNums[x] = "heads";
@@ -140,11 +140,11 @@ function outputNumbers(randNums, coins = false) {
         }
     }
 
-    for( var x = 0; x < randNums.length; x++) {
+    for( let x = 0; x < randNums.length; x++) {
         outputBox.textContent += randNums[x]; // Outputs current number to output panel
 
-        var liNode = document.createElement("LI"); // Create a li element
-        var textNode = document.createTextNode(randNums[x]); // Add text to that li element
+        let liNode = document.createElement("LI"); // Create a li element
+        let textNode = document.createTextNode(randNums[x]); // Add text to that li element
         liNode.className = "history-item"; // Give the li a class
         liNode.appendChild(textNode); // Append the text to the li
         historyBox.appendChild(liNode); // Append the li to the history panel
@@ -157,41 +157,41 @@ function outputNumbers(randNums, coins = false) {
 
 // Generates a set of numbers using info from Numbers tab
 function generateFromNumbersTab() {
-    var quantity = parseInt(document.getElementById("quantityNum").value);
-    var rangeMin = parseInt(document.getElementById("rangeMin").value);
-    var rangeMax = parseInt(document.getElementById("rangeMax").value);
-    var sort = document.getElementById("sortResults").checked;
-    var dupes = document.getElementById("allowDupes").checked;
-    var decs = document.getElementById("allowDecimals").checked;
-    var places = parseInt(document.getElementById("decimalPlaces").value);
+    let quantity = parseInt(document.getElementById("quantityNum").value);
+    let rangeMin = parseInt(document.getElementById("rangeMin").value);
+    let rangeMax = parseInt(document.getElementById("rangeMax").value);
+    let sort = document.getElementById("sortResults").checked;
+    let dupes = document.getElementById("allowDupes").checked;
+    let decs = document.getElementById("allowDecimals").checked;
+    let places = parseInt(document.getElementById("decimalPlaces").value);
     
 
-    var nums = generateNumbers(quantity, rangeMin, rangeMax, sort, dupes, decs, places);
+    let nums = generateNumbers(quantity, rangeMin, rangeMax, sort, dupes, decs, places);
     outputNumbers(nums);
 }
 
 // Rolls dice using info from Dice Roll tab
 function rollDice() {
-    var quantity = parseInt(document.getElementById("quantityDice").value);
+    let quantity = parseInt(document.getElementById("quantityDice").value);
     const rangeMin = 1;
-    var rangeMax = parseInt(document.getElementById("sides").value);
-    var sort = document.getElementById("sortResults").checked;
+    let rangeMax = parseInt(document.getElementById("sides").value);
+    let sort = document.getElementById("sortResults").checked;
 
-    var nums = generateNumbers(quantity, rangeMin, rangeMax, sort);
+    let nums = generateNumbers(quantity, rangeMin, rangeMax, sort);
     outputNumbers(nums);
 }
 
 // Flips coins using info from Coin Flip tab
 function flipCoins() {
-    var quantity = parseInt(document.getElementById("quantityCoins").value);
-    var sort = document.getElementById("sortResults").checked;
+    let quantity = parseInt(document.getElementById("quantityCoins").value);
+    let sort = document.getElementById("sortResults").checked;
 
-    var nums = generateNumbers(quantity, 1, 2, sort);
+    let nums = generateNumbers(quantity, 1, 2, sort);
     outputNumbers(nums, true);
 }
 
 function usePreset(preset=1) {
-    var nums = [];
+    let nums = [];
 
     switch(preset){
         case 1:
@@ -231,11 +231,11 @@ function copyOutput() {
 function copyHistory() {
     const historyList = document.getElementById("historylist");
     const historyItems = historyList.getElementsByClassName("history-item");
-    var output = "";
+    let output = "";
 
     if(historyItems.length > 0){
 
-        for (var i = 0; i < historyItems.length; i ++) {
+        for (let i = 0; i < historyItems.length; i ++) {
             output += historyItems[i].textContent;
 
             if(i !== historyItems.length - 1) { // If this is not the last number, add a comma
@@ -348,7 +348,7 @@ function loadSettings() {
 
     // Sort results
     syncSortBoxes(localStorage.sort);
-    
+
     saveSettings();
 }
 
