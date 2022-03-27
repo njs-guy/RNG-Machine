@@ -1,6 +1,7 @@
 // Opens and closes tabs
 function openTab(evt, tabName) {
     var i, tablinks;
+    let tabN = document.getElementById(tabName);
 
     // Get all elements with class "tabcontent" and hide them
     var tabcontent = document.getElementsByClassName("tabcontent");
@@ -15,7 +16,7 @@ function openTab(evt, tabName) {
     }
 
     // Show the current tab and add an "active" class to the button that opened it
-    document.getElementById(tabName).style.display = "block";
+    tabN.style.display = "block";
     evt.currentTarget.className += " active";
 }
 
@@ -279,11 +280,12 @@ function disableDecimalDropdown(checkValue) {
     decimalPlaces.disabled = checkValue;
 }
 
-function changeTheme(newTheme = "light-theme") {
+function changeTheme(newTheme = 0) {
     const body = document.getElementsByTagName("body")[0];
+    const themeNames = ['light-theme', 'dark-theme', 'black-theme'];
 
     body.className = ''; // Clears current body classes
-    body.classList.add(newTheme); // Adds new theme as a class
+    body.classList.add(themeNames[newTheme]); // Adds new theme as a class
 
     saveSettings();
 }
@@ -303,60 +305,55 @@ function saveSettings() {
     const showHistoryCheck = document.getElementById("showHistoryStart");
 
     localStorage.sort = sortResults.checked;
-    localStorage.currentTheme = currentTheme.value;
-    localStorage.defaultTab = defaultTab.value;
-    localStorage.showHistoryStart = String(showHistoryCheck.checked);
+    localStorage.currentTheme = currentTheme.selectedIndex;
+    localStorage.defaultTab = defaultTab.selectedIndex;
+    localStorage.showHistoryStart = showHistoryCheck.checked;
 }
 
 function loadSettings() {
-    // Start tab
-    tab = localStorage.defaultTab;
+    let currentTheme = localStorage.currentTheme;
+    let tab = localStorage.defaultTab;
 
-    switch(tab){
-        case "numbers":
-            document.getElementById("num-link").id = "defaultOpen";
-            break;
-        case "dice":
-            document.getElementById("dice-link").id = "defaultOpen";
-            break;
-        case "coin":
-            document.getElementById("coin-link").id = "defaultOpen";
-            break;
-        case "presets":
-            document.getElementById("presets-link").id = "defaultOpen";
-            break;
-        default:
-            document.getElementById("num-link").id = "defaultOpen";
+    // Show history on start
+    if(localStorage.showHistoryStart === "false"){ // Does not use boolean because JavaScript
+        hideHistory();
+    } else if(localStorage.showHistoryStart === "true") {
+        document.getElementById("showHistoryStart").checked = true;
     }
 
+    // Theme
+    document.getElementById("theme-dropdown").selectedIndex = currentTheme;
+    changeTheme(currentTheme);
+    
+    // Start tab
+    document.getElementById("tab-dropdown").selectedIndex = tab;
+
+    switch(parseInt(tab)){
+        case 0:
+            document.getElementById("num-link").className += " defaultOpen";
+            break;
+        case 1:
+            document.getElementById("dice-link").className += " defaultOpen";
+            break;
+        case 2:
+            document.getElementById("coin-link").className += " defaultOpen";
+            break;
+        case 3:
+            document.getElementById("presets-link").className += " defaultOpen";
+            break;
+        default:
+            document.getElementById("num-link").className += " defaultOpen";
+            break;
+    }
 
     // Sort results
     syncSortBoxes(localStorage.sort);
-
-    // Theme
-    var currentTheme = localStorage.currentTheme;
-    var selectedThemeIndex = document.getElementById("theme-dropdown").selectedIndex;
-
-    changeTheme(currentTheme);
-    switch(String(currentTheme)) {
-        case "light-theme":
-            selectedThemeIndex = "0";
-            break;
-        case "dark-theme":
-            selectedThemeIndex = "1";
-            break;
-        case "black-theme":
-            selectedThemeIndex = "2";
-            break;
-    }
-
-    if(localStorage.showHistoryStart === "false"){
-        hideHistory();
-    }
+    
+    saveSettings();
 }
 
 // Load user settings
 loadSettings();
 
 // Open the default tab on start
-document.getElementById("defaultOpen").click();
+document.getElementsByClassName("defaultOpen")[0].click();
