@@ -39,7 +39,7 @@ body {
 }
 
 body.light-theme {
-    --bodyBg: linen;
+    --bodyBg: #EAEAEA;
     --tabBg: white;
     --tabHovBg: lightgray;
     --panelColor: whitesmoke;
